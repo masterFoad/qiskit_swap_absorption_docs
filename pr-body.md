@@ -2,6 +2,7 @@ This adds a private `_AbsorbIntoSwaps` pass that moves a commuting two-qubit int
 
 Routing can separate an interaction from a SWAP by operations that commute with it, which hides the opportunity for joint synthesis. In the issue's example, moving the CP next to the SWAP saves one CX gate; in the simplest case, a SWAP followed by a CX on the same ordered pair needs two CX gates instead of four. The pass only reorders operations; the gate reduction comes from the subsequent synthesis.
 
+The pass uses `CommutationChecker` to find safe gate moves, and this PR adds the Rust binding needed to access its commutation table.
 
 ### Benchmarks
 
