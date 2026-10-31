@@ -8,12 +8,14 @@ The pass uses `CommutationChecker` to find safe gate moves, and this PR adds the
 
 D2 is two-qubit depth and N2 is two-qubit gate count. 
 
-[Qiskit benchmarks](https://github.com/masterFoad/qiskit_swap_absorption_docs/blob/master/qiskit_benchmarks_report.md) (weighted, all 213 quality checks pass, runtime +1.61%):
+[Qiskit benchmarks](https://github.com/masterFoad/qiskit_swap_absorption_docs/blob/master/qiskit_benchmarks_report.md):
 
 | Metric | Improvement |
 | --- | ---: |
 | D2 | +3.93% |
 | N2 | +2.85% |
+
+Runtime increased by 1.61%.
 
 [Benchpress](https://github.com/masterFoad/qiskit_swap_absorption_docs/blob/master/benchpress_report.md) (100 cases at levels 2 and 3, seeds 0-2, geomean; 37 better, 0 worse):
 
