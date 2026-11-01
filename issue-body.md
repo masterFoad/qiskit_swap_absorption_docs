@@ -29,7 +29,7 @@ for c in (qc, moved):
 # 5
 ```
 
-Moving the CP next to the SWAP saves 2 CX here. (Default `transpile()` with a coupling map and routing enabled would not show this, because `ElidePermutations` removes the hand-written SWAP at levels 2 and 3.)
+Moving the CP next to the SWAP saves 2 CX here. The example starts after routing because a hand-written SWAP in the input would be removed by `ElidePermutations` in the init stage. In a full `transpile()`, the SWAPs this pass works on are the ones inserted by routing, after that stage; the Benchpress numbers below are from full transpiles.
 
 The pass would run at the start of the translation stage, after routing, while SWAPs are still explicit. It would move a gate only across operations that commute with it, keep it on its original side of the SWAP, and never move it across another SWAP.
 
